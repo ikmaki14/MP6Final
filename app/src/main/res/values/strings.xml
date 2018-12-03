@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MP6</string>
+    <string name="current_date">Date</string>
+    <string name="action_settings">Menu</string>
+    <string name="action_week">Week</string>
+    <string name="action_month">Month</string>
+</resources>
