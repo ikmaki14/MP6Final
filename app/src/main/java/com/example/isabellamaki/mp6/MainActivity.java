@@ -1,15 +1,16 @@
 package com.example.isabellamaki.mp6;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
 
         TextView textViewDate = findViewById(R.id.text_view_date);
         textViewDate.setText(currentDate);
+
+        Intent incomingDate = getIntent();
+        String date = incomingDate.getStringExtra("date");
+        textViewDate.setText(date);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         if (id == R.id.action_month) {
+            Intent month_intent = new Intent(this, Month.class);
+            startActivity(month_intent);
             Toast.makeText(this, "Month is Clicked", Toast.LENGTH_LONG).show();
             return true;
         }

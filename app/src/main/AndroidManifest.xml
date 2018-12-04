@@ -25,6 +25,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".Month"></activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBFJVfEmm8JrjcL7RMWuWm4eNQg3QZtVkQ" />
