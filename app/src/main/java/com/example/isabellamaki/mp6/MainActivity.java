@@ -1,5 +1,6 @@
 package com.example.isabellamaki.mp6;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
 
         TextView textViewDate = findViewById(R.id.text_view_date);
         textViewDate.setText(currentDate);
+
+        Intent incomingDate = getIntent();
+        String date = incomingDate.getStringExtra("date");
+        textViewDate.setText(date);
 
         ListView assignmentList = (ListView) findViewById(R.id.assignmentListView);
         //handle item clicks
@@ -111,6 +117,8 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         if (id == R.id.action_month) {
+            Intent month_intent = new Intent(this, Month.class);
+            startActivity(month_intent);
             Toast.makeText(this, "Month is Clicked", Toast.LENGTH_LONG).show();
             return true;
         }
