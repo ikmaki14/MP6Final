@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="97dp"
+        android:layout_height="98dp"
+        android:src="@mipmap/ic_launcher_round"
+        android:contentDescription="TODO" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/subjectTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="1dp"
+            android:text="SubjectTitle: "
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/assignmentTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="1dp"
+            android:layout_toEndOf="@+id/subjectTitle"
+            android:layout_weight="1"
+            android:text="AssignmentTitle "
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/dueDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="1dp"
+            android:layout_toEndOf="@+id/assignmentTitle"
+            android:layout_weight="1"
+            android:text="[Due: Date]"
+            android:textStyle="normal" />
+
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="2dp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/courseSite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="2dp"
+            android:text="Course Site:" />
+
+    </LinearLayout>
+</LinearLayout>
