@@ -46,19 +46,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             Intent menu_intent = new Intent(this, MainActivity.class);
             startActivity(menu_intent);
@@ -74,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Month is Clicked", Toast.LENGTH_LONG).show();
             return true;
         }
-//        temporary
+
         if (id == R.id.action_map) {
             Intent map_intent = new Intent(this, FirstFragment.class);
             startActivity(map_intent);
