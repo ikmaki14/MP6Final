@@ -65,7 +65,6 @@ public class FirstFragment extends AppCompatActivity implements OnMapReadyCallba
     private GoogleApiClient mGoogleApiClient;
     private PlaceInfo mPlace;
     private AutoCompleteTextView mSearch;
-    private ImageView mGps;
     private ImageView mInfo;
     private Marker mMarker;
 
@@ -108,13 +107,6 @@ public class FirstFragment extends AppCompatActivity implements OnMapReadyCallba
                 }
             });
 
-            mGps.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    getDeviceLocation();
-                }
-            });
-
             mInfo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -140,7 +132,6 @@ public class FirstFragment extends AppCompatActivity implements OnMapReadyCallba
 
         setContentView(R.layout.first_fragment);
         mSearch = (AutoCompleteTextView) findViewById(R.id.search);
-        mGps = (ImageView) findViewById(R.id.ic_gps);
         mInfo = (ImageView) findViewById(R.id.ic_info);
         getLocationPermission();
         mSearch = (AutoCompleteTextView) findViewById(R.id.search);
