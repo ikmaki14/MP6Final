@@ -6,13 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".AssignmentInput">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"></LinearLayout>
-
     <TextView
-        android:id="@+id/courseSiteTextView"
+        android:id="@+id/editCourseSiteTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -20,10 +15,10 @@
         android:text="@string/course_site"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dueDateTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/editDueDateTextView" />
 
     <TextView
-        android:id="@+id/descriptionTextView"
+        android:id="@+id/editDescriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -31,10 +26,10 @@
         android:text="@string/description"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/courseSiteTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/editCourseSiteTextView" />
 
     <TextView
-        android:id="@+id/assignmentNameTextView"
+        android:id="@+id/editAssignmentNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -42,10 +37,10 @@
         android:text="@string/assignment"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subjectTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/editSubjectTextView" />
 
     <EditText
-        android:id="@+id/courseSiteEditText"
+        android:id="@+id/editCourseSiteEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -56,12 +51,12 @@
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/courseSiteTextView"
-        app:layout_constraintTop_toBottomOf="@+id/dueDateEditText"
+        app:layout_constraintStart_toEndOf="@+id/editCourseSiteTextView"
+        app:layout_constraintTop_toBottomOf="@+id/editDueDateEditText"
         android:autofillHints="" />
 
     <Button
-        android:id="@+id/submitButton"
+        android:id="@+id/editSubmitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -73,26 +68,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.971"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionEditText"
+        app:layout_constraintTop_toBottomOf="@+id/editDescriptionEditText"
         app:layout_constraintVertical_bias="0.013" />
 
     <Button
-        android:id="@+id/cancelButton"
+        android:id="@+id/editCancelButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/cancel"
-        app:layout_constraintBottom_toBottomOf="@+id/submitButton"
-        app:layout_constraintEnd_toStartOf="@+id/submitButton"
+        app:layout_constraintBottom_toBottomOf="@+id/editSubmitButton"
+        app:layout_constraintEnd_toStartOf="@+id/editSubmitButton"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/submitButton"
+        app:layout_constraintTop_toTopOf="@+id/editSubmitButton"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/dueDateTextView"
+        android:id="@+id/editDueDateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -103,10 +98,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/assignmentNameTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/editAssignmentNameTextView" />
 
     <TextView
-        android:id="@+id/subjectTextView"
+        android:id="@+id/editSubjectTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -117,7 +112,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/subjectEditText"
+        android:id="@+id/editSubjectEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -128,12 +123,12 @@
         android:inputType="text|textAutoCorrect"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/subjectTextView"
+        app:layout_constraintStart_toEndOf="@+id/editSubjectTextView"
         app:layout_constraintTop_toTopOf="parent"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/assignmentNameEditText"
+        android:id="@+id/editAssignmentNameEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -144,12 +139,12 @@
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/assignmentNameTextView"
-        app:layout_constraintTop_toBottomOf="@+id/subjectEditText"
+        app:layout_constraintStart_toEndOf="@+id/editAssignmentNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/editSubjectEditText"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/dueDateEditText"
+        android:id="@+id/editDueDateEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"
@@ -160,12 +155,12 @@
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/dueDateTextView"
-        app:layout_constraintTop_toBottomOf="@+id/assignmentNameEditText"
+        app:layout_constraintStart_toEndOf="@+id/editDueDateTextView"
+        app:layout_constraintTop_toBottomOf="@+id/editAssignmentNameEditText"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/descriptionEditText"
+        android:id="@+id/editDescriptionEditText"
         android:layout_width="0dp"
         android:layout_height="87dp"
         android:layout_marginStart="8dp"
@@ -177,8 +172,8 @@
         android:singleLine="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/descriptionTextView"
-        app:layout_constraintTop_toBottomOf="@+id/courseSiteEditText"
+        app:layout_constraintStart_toEndOf="@+id/editDescriptionTextView"
+        app:layout_constraintTop_toBottomOf="@+id/editCourseSiteEditText"
         android:autofillHints="" />
 
 </android.support.constraint.ConstraintLayout>

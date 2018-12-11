@@ -38,14 +38,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".Month"></activity>
+        <activity
+            android:name=".Month"
+            android:label="@string/title_month"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".FirstFragment"></activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBFJVfEmm8JrjcL7RMWuWm4eNQg3QZtVkQ" />
 
         <activity
             android:name=".AssignmentInput"
             android:label="@string/title_activity_assignment_input"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AssignmentEdit"></activity>
     </application>
 
 </manifest>

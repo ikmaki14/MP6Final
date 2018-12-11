@@ -24,9 +24,13 @@ public class Month extends AppCompatActivity {
                 String date = (i1 + 1) + "/" + i2 + "/" + i;
                 Log.d(TAG, "onSelectedDayChange: mm/dd/yyyy: " + date);
 
+                Bundle passedDataToKeep = getIntent().getExtras();
                 Intent dayIntent = new Intent(Month.this, MainActivity.class);
-                dayIntent.putExtra("date", date);
-                startActivity(dayIntent);
+                passedDataToKeep.putString("date", date);
+                dayIntent.putExtras(passedDataToKeep);
+                setResult(RESULT_OK, dayIntent);
+                finish();
+                //startActivity(dayIntent);
             }
         });
     }

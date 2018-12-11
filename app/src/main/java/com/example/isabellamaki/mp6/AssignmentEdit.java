@@ -8,45 +8,59 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 
-public class AssignmentInput extends AppCompatActivity {
+public class AssignmentEdit extends AppCompatActivity {
     protected ArrayList<String> subjectTitles = new ArrayList<>();
     protected ArrayList<String> assignmentTitles = new ArrayList<>();
     protected ArrayList<String> dueDates = new ArrayList<>();
     protected ArrayList<String> courseSites = new ArrayList<>();
     protected ArrayList<String> descriptions = new ArrayList<>();
+    protected int position = 0;
 
     private static final String TAG = "MP6-AssignmentInput";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_assignment_input);
+        setContentView(R.layout.activity_assignment_edit);
         restoreData(getIntent());
 
+        EditText editSubjectEditText = findViewById(R.id.editSubjectEditText);
+        EditText editAssignmentNameEditText = findViewById(R.id.editAssignmentNameEditText);
+        EditText editDueDateEditText = findViewById(R.id.editDueDateEditText);
+        EditText editCourseSiteEditText = findViewById(R.id.editCourseSiteEditText);
+        EditText editDescriptionEditText = findViewById(R.id.editDescriptionEditText);
+
+        editSubjectEditText.setText(subjectTitles.get(position), TextView.BufferType.EDITABLE);
+        editAssignmentNameEditText.setText(assignmentTitles.get(position), TextView.BufferType.EDITABLE);
+        editDueDateEditText.setText(dueDates.get(position), TextView.BufferType.EDITABLE);
+        editCourseSiteEditText.setText(courseSites.get(position), TextView.BufferType.EDITABLE);
+        editDescriptionEditText.setText(descriptions.get(position), TextView.BufferType.EDITABLE);
+
         //Submit Button
-        Button submitButton = findViewById(R.id.submitButton);
+        Button submitButton = findViewById(R.id.editSubmitButton);
         //If Submit Button is pushed...
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                //get the subjectEditText, assignmentNameEditText, dueDateEditText, courseSiteEditText
-                EditText subjectEditText = findViewById(R.id.subjectEditText);
-                EditText assignmentNameEditText = findViewById(R.id.assignmentNameEditText);
-                EditText dueDateEditText = findViewById(R.id.dueDateEditText);
-                EditText courseSiteEditText = findViewById(R.id.courseSiteEditText);
-                EditText descriptionEditText = findViewById(R.id.descriptionEditText);
+                //get the subjectEditText, editAssignmentNameEditText, editDueDateEditText, courseSiteEditText
+                EditText editSubjectEditText = findViewById(R.id.editSubjectEditText);
+                EditText editAssignmentNameEditText = findViewById(R.id.editAssignmentNameEditText);
+                EditText editDueDateEditText = findViewById(R.id.editDueDateEditText);
+                EditText editCourseSiteEditText = findViewById(R.id.editCourseSiteEditText);
+                EditText editDescriptionEditText = findViewById(R.id.editDescriptionEditText);
 
                 //Put user input into String variables
-                String subject = subjectEditText.getText().toString();
-                String hw = assignmentNameEditText.getText().toString();
-                String due = dueDateEditText.getText().toString();
-                String site = courseSiteEditText.getText().toString();
-                String desc = descriptionEditText.getText().toString();
+                String subject = editSubjectEditText.getText().toString();
+                String hw = editAssignmentNameEditText.getText().toString();
+                String due = editDueDateEditText.getText().toString();
+                String site = editCourseSiteEditText.getText().toString();
+                String desc = editDescriptionEditText.getText().toString();
 
 
                 //Don't let them submit unless fields are filled, site + desc are optional
@@ -99,24 +113,25 @@ public class AssignmentInput extends AppCompatActivity {
                     Log.d(TAG, "siteSet: " + site);
                     Log.d(TAG, "descSet: " + desc);
 
-                    subjectTitles.add(subject);
+                    subjectTitles.remove(position);
+                    subjectTitles.add(position, subject);
                     Log.d(TAG, subjectTitles.toString());
                     Log.d(TAG, subjectTitles.get(subjectTitles.size() - 1) + " added to subjectTitles");
 
-
-                    assignmentTitles.add(hw);
+                    assignmentTitles.remove(position);
+                    assignmentTitles.add(position, hw);
                     Log.d(TAG, assignmentTitles.get(assignmentTitles.size() - 1) + " added to assignmentTitles");
 
-
-                    dueDates.add(due);
+                    dueDates.remove(position);
+                    dueDates.add(position, due);
                     Log.d(TAG, dueDates.get(dueDates.size() - 1) + " added to dueDates");
 
-
-                    courseSites.add(site);
+                    courseSites.remove(position);
+                    courseSites.add(position, site);
                     Log.d(TAG, courseSites.get(courseSites.size() - 1) + " added to courseSites");
 
-
-                    descriptions.add(desc);
+                    descriptions.remove(position);
+                    descriptions.add(position, desc);
                     Log.d(TAG, descriptions.get(descriptions.size() - 1) + " added to descriptions");
 
 
@@ -126,22 +141,17 @@ public class AssignmentInput extends AppCompatActivity {
 
                     Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
                     startIntent.putExtras(data);
-                    /*startIntent.putExtra("sub", subject);
-                    startIntent.putExtra("assign", hw);
-                    startIntent.putExtra("due", due);
-                    startIntent.putExtra("site", site);
-                    startIntent.putExtra("desc", desc);*/
 
                     //go back to MainActivity
-                    setResult(RESULT_OK, startIntent);
-                    finish();
-                    //startActivity(startIntent);
+                    //setResult(RESULT_OK, startIntent);
+                    //finish();
+                    startActivity(startIntent);
                 }
             }
         });
 
         //Cancel Button
-        final Button cancelButton = findViewById(R.id.cancelButton);
+        final Button cancelButton = findViewById(R.id.editCancelButton);
         //If Cancel Button is pushed...
         cancelButton.setOnClickListener(new View.OnClickListener() {
             //return to the MainActivity, passing no information
@@ -169,32 +179,6 @@ public class AssignmentInput extends AppCompatActivity {
         return data;
     }
 
-    @Override
-    public void onSaveInstanceState(Bundle bundle) {
-        super.onSaveInstanceState(bundle);
-        //Log.d(TAG, "onSaveInstanceState() called. Saving data...");
-        //Save UI state changes to the savedInstanceState.
-        //This bundle will be passed to onCreate if the process is killed & restarted.
-        bundle.putStringArrayList("MySubjectTitles", subjectTitles);
-        bundle.putStringArrayList("MyAssignmentTitles", assignmentTitles);
-        bundle.putStringArrayList("MyDueDates", dueDates);
-        bundle.putStringArrayList("MyCourseSites", courseSites);
-        bundle.putStringArrayList("MyDescriptions", descriptions);
-    }
-
-    @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        //Restore UI state from the savedInstanceState.
-        //This bundle has also been passed to onCreate.
-        subjectTitles = savedInstanceState.getStringArrayList("MySubjectTitles");
-        assignmentTitles = savedInstanceState.getStringArrayList("MyAssignmentTitles");
-        dueDates = savedInstanceState.getStringArrayList("MyDueDates");
-        courseSites = savedInstanceState.getStringArrayList("MyCourseSites");
-        descriptions = savedInstanceState.getStringArrayList("MyDescriptions");
-
-    }
-
     private void restoreData(Intent intent) {
         Bundle data = intent.getExtras();
         if (data != null) {
@@ -203,6 +187,8 @@ public class AssignmentInput extends AppCompatActivity {
             dueDates = data.getStringArrayList("MyDueDates");
             courseSites = data.getStringArrayList("MyCourseSites");
             descriptions = data.getStringArrayList("MyDescriptions");
+            position = data.getInt("i");
         }
     }
+
 }

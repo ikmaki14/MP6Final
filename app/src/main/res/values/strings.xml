@@ -6,6 +6,7 @@
     <string name="action_month">Month</string>
     <string name="action_map">Map</string>
     <string name="title_activity_assignment_input">AssignmentInput</string>
+    <string name="title_month">Month</string>
     <string name="course_site">Course Site:</string>
     <string name="description">Description:</string>
     <string name="assignment">Assignment:</string>
