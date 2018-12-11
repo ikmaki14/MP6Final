@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <ImageButton
+        android:id="@+id/deleteButton"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="5dp"
+        android:layout_weight="1"
+        app:srcCompat="@android:drawable/ic_delete"
+        tools:srcCompat="@android:drawable/ic_delete" />
+
+    <ImageButton
+        android:id="@+id/editButton"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_below="@+id/deleteButton"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="4dp"
+        android:layout_weight="1"
+        app:srcCompat="@android:drawable/ic_menu_edit"
+        tools:srcCompat="@android:drawable/ic_menu_edit" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_toStartOf="@+id/editButton"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/subjectTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="1dp"
+            android:text="SubjectTitle: "
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/assignmentTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="1dp"
+            android:layout_toEndOf="@+id/subjectTitle"
+            android:layout_weight="1"
+            android:text="AssignmentTitle "
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/dueDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="1dp"
+            android:layout_toEndOf="@+id/assignmentTitle"
+            android:layout_weight="1"
+            android:text="[Due: Date]"
+            android:textStyle="normal" />
+
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="2dp"
+            android:text="Description"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/courseSite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="2dp"
+            android:text="Course Site:" />
+
+    </LinearLayout>
+
+</RelativeLayout>
