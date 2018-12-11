@@ -1,6 +1,5 @@
 package com.example.isabellamaki.mp6;
 
-import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -21,7 +20,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -129,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_map) {
             Intent map_intent = new Intent(this, FirstFragment.class);
             startActivity(map_intent);
-            Toast.makeText(this, "Map is clicked", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Map is Clicked", Toast.LENGTH_LONG).show();
             return true;
         }
         return super.onOptionsItemSelected(item);
