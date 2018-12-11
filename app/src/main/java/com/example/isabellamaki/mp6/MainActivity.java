@@ -1,6 +1,5 @@
 package com.example.isabellamaki.mp6;
 
-import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,7 +19,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
     protected ArrayList<String> dueDates = new ArrayList<>();
     protected ArrayList<String> courseSites = new ArrayList<>();
     protected ArrayList<String> descriptions = new ArrayList<>();
-    protected int tmpLogo = R.drawable.tmp_logo;
 
     private static final String TAG = "MP6-AssignmentInput";
 
@@ -176,8 +173,7 @@ public class MainActivity extends AppCompatActivity {
                 assignmentTitles,
                 dueDates,
                 courseSites,
-                descriptions,
-                tmpLogo);
+                descriptions);
         assignmentList.setAdapter(arrayAdapter);
     }
 
@@ -217,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
 
         MyAdapter(Context c, ArrayList<String> subjectTitles, ArrayList<String> assignmentTitles,
                   ArrayList<String> dueDates, ArrayList<String> courseSites,
-                  ArrayList<String> descriptions, int tmpLogo) {
+                  ArrayList<String> descriptions) {
             super(c, R.layout.row, R.id.subjectTitle, subjectTitles); //R.id.subjectTextView, subjectTitles);
             this.context = c;
             this.mySubjects = subjectTitles;
@@ -225,7 +221,6 @@ public class MainActivity extends AppCompatActivity {
             this.myDueDates = dueDates;
             this.myCourseSites = courseSites;
             this.myDescriptions = descriptions;
-            this.images = tmpLogo;
         }
 
         @NonNull
@@ -241,7 +236,6 @@ public class MainActivity extends AppCompatActivity {
             TextView mySite = row.findViewById(R.id.courseSite);
             TextView myDescription = row.findViewById(R.id.description);
 
-            logo.setImageResource(tmpLogo);
             mySubject.setText("Class: " + subjectTitles.get(position));
             myAssignment.setText(assignmentTitles.get(position));
             myDueDate.setText("[Due: " + dueDates.get(position) + "]");
