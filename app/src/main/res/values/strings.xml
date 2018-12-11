@@ -15,7 +15,7 @@
     <string name="submit">Submit</string>
     <string name="enter_url">Enter URL</string>
     <string name="enter_title">Enter title</string>
-    <string name="enter_date">[MM/DD/YY]</string>
+    <string name="enter_date">[MM/DD/YYYY]</string>
     <string name="enter_description">Enter description</string>
     <string name="class_for">Class:</string>
 
