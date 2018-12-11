@@ -1,8 +1,22 @@
 <resources>
-    <string name="app_name">MP6</string>
+    <string name="app_name">MP6Final</string>
     <string name="current_date">Date</string>
     <string name="action_settings">Menu</string>
     <string name="action_week">Week</string>
     <string name="action_month">Month</string>
     <string name="action_map">Map</string>
+    <string name="title_activity_assignment_input">AssignmentInput</string>
+    <string name="course_site">Course Site:</string>
+    <string name="description">Description:</string>
+    <string name="assignment">Assignment:</string>
+    <string name="enter_subject">Enter subject</string>
+    <string name="due_date">Due Date:</string>
+    <string name="cancel">Cancel</string>
+    <string name="submit">Submit</string>
+    <string name="enter_url">Enter URL</string>
+    <string name="enter_title">Enter title</string>
+    <string name="enter_date">[MM/DD/YY]</string>
+    <string name="enter_description">Enter description</string>
+    <string name="class_for">Class:</string>
+
 </resources>
